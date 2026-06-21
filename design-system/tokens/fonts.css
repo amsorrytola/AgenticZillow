@@ -1,0 +1,7 @@
+/* AgenticZillow — Webfonts
+   Inter is the brand font (free humanist stand-in for Zillow's brand face).
+   NOTE: loaded from Google Fonts CDN. For fully offline/self-hosted use,
+   drop Inter .woff2 files into assets/fonts/ and replace this @import with
+   local @font-face rules. */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap");

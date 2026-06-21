@@ -1,0 +1,45 @@
+/* AgenticZillow — Spacing, radius, shadow tokens (4px base) */
+
+:root {
+  /* ---- Spacing scale ---- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+
+  /* Layout */
+  --content-max: 1280px;
+  --content-pad: 24px;
+  --card-pad: 16px;
+  --grid-gap: 20px;
+
+  /* ---- Radius ---- */
+  --radius-sm: 8px;     /* buttons, inputs, selects, property cards */
+  --radius-md: 12px;    /* modals, dropdowns, mega-menus */
+  --radius-pill: 9999px;/* hero CTAs, filter chips, price bubbles, avatars */
+  --radius-chip: 20px;  /* pills / filter chips (alt) */
+  --radius-card-photo: 8px 8px 0 0; /* property-card photo top corners */
+
+  /* ---- Shadows ---- */
+  --shadow-xs: 0 1px 2px rgba(0,0,0,0.06);
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.10), 0 1px 2px rgba(0,0,0,0.06);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.12);
+  --shadow-lg: 0 8px 24px rgba(0,0,0,0.16);
+  --shadow-pin: 0 1px 4px rgba(0,0,0,0.30);
+
+  /* Control sizing */
+  --control-h: 40px;
+  --control-h-lg: 44px;
+
+  /* Header */
+  --header-h: 60px;
+  --z-header: 1000; /* @kind other */
+}

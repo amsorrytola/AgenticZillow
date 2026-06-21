@@ -1,0 +1,18 @@
+<!-- @dsCard group="Spacing" viewport="700x190" name="Shadows" subtitle="xs → lg elevation; cards are border-defined at rest" -->
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/>
+<link rel="stylesheet" href="../styles.css"/>
+<style>body{margin:0;padding:28px;background:var(--surface-zebra);font-family:var(--font-sans)}
+.r{display:flex;gap:28px;align-items:flex-end}
+.col{display:flex;flex-direction:column;align-items:center;gap:12px}
+.box{width:104px;height:72px;background:#fff;border-radius:10px}
+.n{font-size:12px;font-weight:600;color:var(--text-primary)}.s{font-size:11px;color:var(--text-muted)}</style></head>
+<body>
+<div class="r">
+<div class="col"><div class="box" style="box-shadow:var(--shadow-xs)"></div><span class="n">xs</span><span class="s">subtle lift</span></div>
+<div class="col"><div class="box" style="box-shadow:var(--shadow-sm)"></div><span class="n">sm</span><span class="s">cards at rest</span></div>
+<div class="col"><div class="box" style="box-shadow:var(--shadow-md)"></div><span class="n">md</span><span class="s">hover · dropdowns</span></div>
+<div class="col"><div class="box" style="box-shadow:var(--shadow-lg)"></div><span class="n">lg</span><span class="s">modals · copilot</span></div>
+<div class="col"><div class="box" style="border:1px solid var(--border-hairline);box-shadow:none"></div><span class="n">border</span><span class="s">card default</span></div>
+</div>
+</body></html>

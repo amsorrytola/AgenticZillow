@@ -1,0 +1,46 @@
+<!-- @dsCard group="Components" viewport="700x320" name="Agentic Surfaces" subtitle="The branded Ask pill / FAB and Live Activity Timeline rows" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="../../styles.css" />
+<style>body{margin:0;padding:24px;background:#fff;font-family:var(--font-sans)}
+@keyframes az-spin{to{transform:rotate(360deg)}}
+.row{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:18px}
+.lbl{font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--text-muted);width:84px;flex:none}
+.tl{width:380px;border:1px solid var(--border-hairline);border-radius:12px;overflow:hidden;box-shadow:var(--shadow-sm)}</style>
+</head>
+<body>
+<div id="root"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<script type="text/babel">
+const { AskPill, AgentTimelineRow } = window.AgenticZillowDesignSystem_f8327a;
+function Demo(){
+  return (
+    <div style={{display:"flex",gap:32,alignItems:"flex-start",flexWrap:"wrap"}}>
+      <div>
+        <div className="row"><span className="lbl">Entry</span>
+          <AskPill/>
+          <AskPill fab badge={3}/>
+        </div>
+        <div className="row" style={{maxWidth:300}}><span className="lbl"></span>
+          <span style={{fontSize:13,color:"var(--text-muted)"}}>The blue→violet gradient is reserved for this one branded AI doorway.</span>
+        </div>
+      </div>
+      <div className="tl">
+        <AgentTimelineRow agent="orchestrator" label="Planning 5 steps…" status="ok" time="0.4s"/>
+        <AgentTimelineRow agent="search" label="Parsing intent → filters (3+ bd, ≤$600k)" status="ok" time="0.9s"/>
+        <AgentTimelineRow agent="search" label="Semantic search 'craftsman, cafés' … 41 hits" status="ok" time="1.6s"/>
+        <AgentTimelineRow agent="market" label="Pulling comps & Zestimate deltas…" status="running" model="Groq · llama-3.3" cost="$0.012"/>
+        <AgentTimelineRow agent="concierge" label="Simulating tour requests for top 3" status="running"/>
+      </div>
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById("root")).render(<Demo/>);
+</script>
+</body>
+</html>

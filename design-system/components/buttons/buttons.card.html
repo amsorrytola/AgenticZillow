@@ -1,0 +1,51 @@
+<!-- @dsCard group="Components" viewport="700x200" name="Buttons" subtitle="Primary, secondary, ghost, text, destructive & the branded agentic button" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="../../styles.css" />
+<style>body{margin:0;padding:24px;background:#fff;font-family:var(--font-sans)}
+.row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.lbl{font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--text-muted);width:84px;flex:none}</style>
+</head>
+<body>
+<div id="root"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<script type="text/babel">
+const { Button, IconButton } = window.AgenticZillowDesignSystem_f8327a;
+function Demo(){
+  return (
+    <div>
+      <div className="row"><span className="lbl">Variants</span>
+        <Button variant="primary">Request a tour</Button>
+        <Button variant="secondary">Contact agent</Button>
+        <Button variant="ghost">Skip</Button>
+        <Button variant="text">Show more</Button>
+        <Button variant="destructive">Remove</Button>
+      </div>
+      <div className="row"><span className="lbl">Agentic</span>
+        <Button variant="agentic" pill iconLeft={<span>✦</span>}>Ask AgenticZillow</Button>
+        <Button variant="primary" pill>Start your search</Button>
+      </div>
+      <div className="row"><span className="lbl">Sizes</span>
+        <Button size="sm">Small</Button>
+        <Button size="md">Medium</Button>
+        <Button size="lg">Large</Button>
+        <Button disabled>Disabled</Button>
+      </div>
+      <div className="row"><span className="lbl">Icon</span>
+        <IconButton label="Save"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="M12 20.5 4.4 13a4.6 4.6 0 0 1 6.5-6.5l1.1 1.1 1.1-1.1A4.6 4.6 0 0 1 19.6 13L12 20.5Z"/></svg></IconButton>
+        <IconButton label="Share"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5 15.4 17.5M15.4 6.5 8.6 10.5"/></svg></IconButton>
+        <IconButton label="Saved" active><svg width="22" height="22" viewBox="0 0 24 24" fill="var(--saved-heart)" stroke="var(--saved-heart)" strokeWidth="1.8"><path d="M12 20.5 4.4 13a4.6 4.6 0 0 1 6.5-6.5l1.1 1.1 1.1-1.1A4.6 4.6 0 0 1 19.6 13L12 20.5Z"/></svg></IconButton>
+        <IconButton label="Close"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="M6 6 18 18M18 6 6 18"/></svg></IconButton>
+      </div>
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById("root")).render(<Demo/>);
+</script>
+</body>
+</html>

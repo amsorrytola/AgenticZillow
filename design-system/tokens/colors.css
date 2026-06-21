@@ -1,0 +1,73 @@
+/* AgenticZillow — Color tokens
+   "Zillow at rest, AgenticZillow in motion."
+   Light theme, Zillow blue. Base palette + semantic aliases. */
+
+:root {
+  /* ---- Brand blue (primary) ---- */
+  --blue-600: #006AFF;   /* Zillow Blue — primary buttons, links, pins, brand */
+  --blue-700: #0055CC;   /* hover / pressed */
+  --blue-800: #004BB5;   /* active (darkest) */
+  --blue-500: #1277E1;   /* bright accent / focus glow base */
+  --blue-100: #E8F0FE;   /* tint — selected pill fill, info banners, hover fill */
+  --blue-50:  #F0F6FF;   /* faint wash — row / card hover */
+  --navy-900: #0D1F3C;   /* deep navy — marketing / dark sections */
+
+  /* ---- Agentic accent (use sparingly) ---- */
+  --agentic-from: #006AFF;
+  --agentic-to:   #5B3FD9;
+  --agentic-gradient: linear-gradient(95deg, #006AFF 0%, #5B3FD9 100%); /* @kind color */
+
+  /* ---- Text grays ---- */
+  --gray-900: #2A2A33;   /* primary text & headings */
+  --gray-700: #54545C;   /* secondary text — meta, captions */
+  --gray-600: #74747C;   /* tertiary / muted — helper, days-on-market */
+  --gray-400: #A7A6AD;   /* disabled */
+  --white:    #FFFFFF;   /* text on blue */
+
+  /* ---- Backgrounds & surfaces ---- */
+  --surface-page:    #FFFFFF;
+  --surface-card:    #FFFFFF;
+  --surface-band:    #F1F1F4;   /* subtle section bands, skeleton base */
+  --surface-zebra:   #F7F7F8;   /* even lighter zebra / hover fill */
+  --scrim:           rgba(0,0,0,0.55);   /* modal / lightbox scrim */
+  --photo-gradient:  linear-gradient(180deg, rgba(0,0,0,0) 60%, rgba(0,0,0,0.35) 100%); /* @kind color */
+
+  /* ---- Borders & dividers ---- */
+  --border-default:  #D1D1D6;   /* input / card borders */
+  --border-strong:   #B8B8C0;   /* hovered input */
+  --border-hairline: #E8E8EB;   /* dividers inside cards / lists */
+  --focus-ring:      0 0 0 3px rgba(0,106,255,0.35);
+
+  /* ---- Semantic / status ---- */
+  --success:      #008060;   /* For Sale / For Rent green */
+  --success-fill: #E6F4EF;
+  --warning:      #FFB100;   /* Pending amber */
+  --warning-fill: #FFF4D6;
+  --error:        #D6005C;   /* error / saved-heart / price-cut magenta */
+  --error-fill:   #FCE6EE;
+  --violet:       #9059FF;   /* Coming Soon */
+  --info:         #006AFF;   /* info banners reuse blue */
+
+  /* ---- Status-tag dots (property cards) ---- */
+  --tag-for-sale:    #008060;
+  --tag-pending:     #FFB100;
+  --tag-coming-soon: #9059FF;
+  --tag-new:         #006AFF;
+  --tag-sold:        #74747C;
+  --tag-tour:        #006AFF;   /* 3D Tour / Open House */
+
+  /* ---- Semantic aliases (use these in components) ---- */
+  --text-primary:   var(--gray-900);
+  --text-secondary: var(--gray-700);
+  --text-muted:     var(--gray-600);
+  --text-disabled:  var(--gray-400);
+  --text-on-blue:   var(--white);
+  --text-link:      var(--blue-600);
+
+  --action-primary:        var(--blue-600);
+  --action-primary-hover:  var(--blue-700);
+  --action-primary-active: var(--blue-800);
+
+  --saved-heart: #D6005C;
+  --price-cut:   #D6005C;
+}

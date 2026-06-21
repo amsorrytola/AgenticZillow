@@ -1,0 +1,199 @@
+/* AgenticZillow — global stylesheet.
+   Design tokens ported from design-system/tokens/* (single source of truth for the look).
+   "Zillow at rest, AgenticZillow in motion." Light theme, Zillow blue. */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* ---- Brand blue ---- */
+  --blue-600: #006aff;
+  --blue-700: #0055cc;
+  --blue-800: #004bb5;
+  --blue-500: #1277e1;
+  --blue-100: #e8f0fe;
+  --blue-50: #f0f6ff;
+  --navy-900: #0d1f3c;
+
+  /* ---- Agentic accent (use sparingly) ---- */
+  --agentic-from: #006aff;
+  --agentic-to: #5b3fd9;
+  --agentic-gradient: linear-gradient(95deg, #006aff 0%, #5b3fd9 100%);
+
+  /* ---- Text grays ---- */
+  --gray-900: #2a2a33;
+  --gray-700: #54545c;
+  --gray-600: #74747c;
+  --gray-400: #a7a6ad;
+  --white: #ffffff;
+
+  /* ---- Surfaces ---- */
+  --surface-page: #ffffff;
+  --surface-card: #ffffff;
+  --surface-band: #f1f1f4;
+  --surface-zebra: #f7f7f8;
+  --scrim: rgba(0, 0, 0, 0.55);
+  --photo-gradient: linear-gradient(180deg, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.35) 100%);
+
+  /* ---- Borders ---- */
+  --border-default: #d1d1d6;
+  --border-strong: #b8b8c0;
+  --border-hairline: #e8e8eb;
+  --focus-ring: 0 0 0 3px rgba(0, 106, 255, 0.35);
+
+  /* ---- Semantic / status ---- */
+  --success: #008060;
+  --success-fill: #e6f4ef;
+  --warning: #ffb100;
+  --warning-fill: #fff4d6;
+  --error: #d6005c;
+  --error-fill: #fce6ee;
+  --violet: #9059ff;
+  --info: #006aff;
+
+  /* ---- Status-tag dots ---- */
+  --tag-for-sale: #008060;
+  --tag-pending: #ffb100;
+  --tag-coming-soon: #9059ff;
+  --tag-new: #006aff;
+  --tag-sold: #74747c;
+  --tag-tour: #006aff;
+
+  /* ---- Aliases ---- */
+  --text-primary: var(--gray-900);
+  --text-secondary: var(--gray-700);
+  --text-muted: var(--gray-600);
+  --text-disabled: var(--gray-400);
+  --text-on-blue: var(--white);
+  --text-link: var(--blue-600);
+  --action-primary: var(--blue-600);
+  --action-primary-hover: var(--blue-700);
+  --action-primary-active: var(--blue-800);
+  --saved-heart: #d6005c;
+  --price-cut: #d6005c;
+
+  /* ---- Type ---- */
+  --font-sans: "Inter", "Helvetica Neue", "Segoe UI", Roboto, Arial, sans-serif;
+  --tnum: "tnum" 1, "lnum" 1;
+  --type-hero-size: 46px;
+  --type-price-size: 22px;
+  --type-price-line: 26px;
+
+  /* ---- Spacing / layout ---- */
+  --content-max: 1280px;
+  --content-pad: 24px;
+  --card-pad: 16px;
+  --grid-gap: 20px;
+
+  /* ---- Radius ---- */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-pill: 9999px;
+  --radius-chip: 20px;
+
+  /* ---- Shadows ---- */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.16);
+  --shadow-pin: 0 1px 4px rgba(0, 0, 0, 0.3);
+
+  /* ---- Controls / header ---- */
+  --control-h: 40px;
+  --control-h-lg: 44px;
+  --header-h: 60px;
+  --z-header: 1000;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--text-primary);
+  background: var(--surface-page);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.tnum,
+.az-price,
+.az-stat {
+  font-feature-settings: var(--tnum);
+  font-variant-numeric: tabular-nums lining-nums;
+}
+
+a {
+  color: var(--text-link);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+button {
+  font-family: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* Utility helpers used across app chrome */
+.az-content {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding-left: var(--content-pad);
+  padding-right: var(--content-pad);
+  width: 100%;
+}
+
+.az-eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+}
+
+/* MapLibre overrides to match the low-saturation Zillow basemap feel */
+.maplibregl-ctrl-attrib {
+  font-size: 10px;
+}
+
+@keyframes az-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(0, 106, 255, 0.45); }
+  70% { box-shadow: 0 0 0 12px rgba(0, 106, 255, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 106, 255, 0); }
+}
+
+@keyframes az-spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

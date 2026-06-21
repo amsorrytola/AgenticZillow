@@ -1,0 +1,47 @@
+<!-- @dsCard group="Components" viewport="700x180" name="Badges, Tags & Toasts" subtitle="Status tags, feature/value badges and notification toasts" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="../../styles.css" />
+<style>body{margin:0;padding:24px;background:#fff;font-family:var(--font-sans)}
+.row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+.lbl{font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--text-muted);width:84px;flex:none}
+.dark{background:var(--surface-band);padding:14px;border-radius:8px}</style>
+</head>
+<body>
+<div id="root"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<script type="text/babel">
+const { StatusTag, Badge, Toast } = window.AgenticZillowDesignSystem_f8327a;
+function Demo(){
+  return (
+    <div>
+      <div className="row"><span className="lbl">Status</span>
+        <div className="dark" style={{display:"flex",gap:10,flexWrap:"wrap"}}>
+          <StatusTag status="for-sale"/><StatusTag status="new"/><StatusTag status="pending"/>
+          <StatusTag status="coming-soon"/><StatusTag status="tour"/><StatusTag status="sold"/>
+        </div>
+      </div>
+      <div className="row"><span className="lbl">Badges</span>
+        <Badge tone="blue" variant="soft">~6% under Zestimate</Badge>
+        <Badge tone="success" variant="outline">Great deal</Badge>
+        <Badge tone="warning" variant="soft">Pending</Badge>
+        <Badge tone="error" variant="soft">Price cut</Badge>
+        <Badge tone="neutral" variant="soft">EV charger</Badge>
+        <Badge tone="blue" variant="solid">3</Badge>
+      </div>
+      <div className="row"><span className="lbl">Toasts</span>
+        <Toast tone="success" action="View">Saved to your homes</Toast>
+        <Toast tone="error" action="Retry">The agent hit a snag</Toast>
+      </div>
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById("root")).render(<Demo/>);
+</script>
+</body>
+</html>
