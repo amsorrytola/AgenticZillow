@@ -75,6 +75,7 @@ Legend: ✅ done · 🚧 in progress · ⬜ not started
 - ✅ Local build verified: `npm run build` clean; smoke-tested home, search API, listing, and live agent stream (run cost ~$0.0001 → Anthropic never hit ✓)
 - ✅ Supabase wired: dedicated project `agenticzillow` (ref `oouccbxgpzukggnatiyn`, ap-south-1), migration applied, 150 listings + 15 pros seeded with embeddings; `USE_SUPABASE=true` → app serves from Postgres/pgvector
 - ✅ Vercel deployed: project `talhas-projects-b7c7fb9f/agenticzillow` → **https://agenticzillow.vercel.app** (verified live: home, Supabase search, agent stream)
+- ✅ Mobile responsive: responsive CSS utility system in `globals.css` (breakpoints 1024/860/760/460px), header hamburger, search map/list toggle, full-width copilot, restacking grids — works phone → laptop. Verified in compiled + deployed CSS.
 
 ## Live deployment
 
