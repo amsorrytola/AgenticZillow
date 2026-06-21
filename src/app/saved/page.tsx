@@ -53,7 +53,7 @@ export default function SavedPage() {
               <Button variant="agentic" pill iconLeft={<span>✦</span>} onClick={() => ask("Analyze my saved homes and tell me the best deal")}>Analyze my saved homes</Button>
               <Link href="/compare"><Button variant="secondary">Compare</Button></Link>
             </div>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 20 }}>
+            <div className="az-grid-4">
               {listings.map((l) => <ListingCard key={l.id} l={l} />)}
             </div>
           </>

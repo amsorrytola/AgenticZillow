@@ -20,7 +20,7 @@ export function ProactiveStrip() {
       <div style={{ marginBottom: 12 }}>
         <span className="az-eyebrow">✦ From your agent</span>
       </div>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16 }}>
+      <div className="az-grid-3">
         {items.map((it) => (
           <div key={it.i} style={{ border: "1px solid var(--border-hairline)", borderRadius: 12, padding: 16, background: "#fff", boxShadow: "var(--shadow-xs)" }}>
             <div style={{ fontSize: 13, fontWeight: 700, color: "var(--blue-600)", marginBottom: 6 }}>{it.tag}</div>

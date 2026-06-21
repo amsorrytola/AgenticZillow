@@ -50,9 +50,9 @@ export default async function ListingPage({ params }: { params: Promise<{ id: st
       </div>
 
       {/* Hero: gallery + summary */}
-      <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 24px", display: "grid", gridTemplateColumns: "1.5fr 1fr", gap: 24, alignItems: "start" }}>
+      <div className="az-two-1" style={{ maxWidth: 1280, margin: "0 auto", padding: "0 24px" }}>
         <ListingGallery photos={l.photos} alt={fullAddress(l)} />
-        <div style={{ position: "sticky", top: 76 }}>
+        <div className="az-sticky-rail">
           <div style={{ display: "inline-flex", alignItems: "center", gap: 6, fontSize: 12, fontWeight: 700, color: "var(--success)", marginBottom: 8 }}>
             <span style={{ width: 8, height: 8, borderRadius: "50%", background: "var(--success)" }} /> {statusLabel(l.status)}
           </div>
@@ -85,7 +85,7 @@ export default async function ListingPage({ params }: { params: Promise<{ id: st
       </div>
 
       {/* main two-column */}
-      <div style={{ maxWidth: 1280, margin: "0 auto", padding: "8px 24px 40px", display: "grid", gridTemplateColumns: "1.5fr 1fr", gap: 32, alignItems: "start" }}>
+      <div className="az-two-1" style={{ maxWidth: 1280, margin: "0 auto", padding: "8px 24px 40px" }}>
         <div>
           <section style={{ marginBottom: 28 }}>
             <h2 style={{ fontSize: 22, fontWeight: 700, margin: "0 0 10px" }}>Overview</h2>
@@ -94,7 +94,7 @@ export default async function ListingPage({ params }: { params: Promise<{ id: st
 
           <section style={{ marginBottom: 28 }}>
             <h2 style={{ fontSize: 22, fontWeight: 700, margin: "0 0 12px" }}>Facts & features</h2>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16, marginBottom: 16 }}>
+            <div className="az-grid-4" style={{ marginBottom: 16 }}>
               {facts.map(([k, v]) => <Stat key={k} k={k} v={v} />)}
             </div>
             <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
@@ -142,7 +142,7 @@ export default async function ListingPage({ params }: { params: Promise<{ id: st
         </div>
 
         {/* right rail */}
-        <div style={{ position: "sticky", top: 76, display: "flex", flexDirection: "column", gap: 16 }}>
+        <div className="az-sticky-rail" style={{ display: "flex", flexDirection: "column", gap: 16 }}>
           <MortgageWidget price={l.price} hoa={l.hoa ?? 0} />
           <div style={{ border: "1px solid var(--border-hairline)", borderRadius: 12, padding: 20 }}>
             <h3 style={{ margin: "0 0 12px", fontSize: 18, fontWeight: 700 }}>Tour this home</h3>
@@ -155,7 +155,7 @@ export default async function ListingPage({ params }: { params: Promise<{ id: st
       {/* similar */}
       <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 24px 48px" }}>
         <h2 style={{ fontSize: 22, fontWeight: 700, margin: "0 0 16px" }}>Similar homes</h2>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 20 }}>
+        <div className="az-grid-4">
           {similar.map((s) => <ListingCard key={s.id} l={s} />)}
         </div>
       </div>

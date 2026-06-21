@@ -44,12 +44,12 @@ export default async function AgentsPage() {
 
       <div style={{ maxWidth: 1280, margin: "0 auto", padding: "32px 24px" }}>
         <h2 style={{ fontSize: 24, fontWeight: 700, margin: "0 0 16px" }}>Real estate agents</h2>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }}>
+        <div className="az-grid-3">
           {agents.map((a) => <ProCard key={a.id} a={a} />)}
         </div>
 
         <h2 style={{ fontSize: 24, fontWeight: 700, margin: "36px 0 16px" }}>Lenders</h2>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }}>
+        <div className="az-grid-3">
           {lenders.map((a) => <ProCard key={a.id} a={a} />)}
         </div>
       </div>

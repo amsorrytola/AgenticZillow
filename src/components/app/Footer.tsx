@@ -19,11 +19,11 @@ export function Footer() {
     <footer style={{ background: "#fff", borderTop: "1px solid var(--border-hairline)" }}>
       <div style={{ maxWidth: 1280, margin: "0 auto", padding: "32px 24px", borderBottom: "1px solid var(--border-hairline)" }}>
         <div style={{ fontSize: 13, fontWeight: 700, marginBottom: 16 }}>Popular searches</div>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(6, 1fr)", gap: "10px 24px" }}>
+        <div className="az-grid-6">
           {POPULAR.map((p) => <Link key={p} href="/search" style={{ fontSize: 13, color: "var(--text-secondary)" }}>{p}</Link>)}
         </div>
       </div>
-      <div style={{ maxWidth: 1280, margin: "0 auto", padding: "32px 24px", display: "grid", gridTemplateColumns: "repeat(5, 1fr) 1.4fr", gap: 24 }}>
+      <div className="az-foot-cols" style={{ maxWidth: 1280, margin: "0 auto", padding: "32px 24px" }}>
         {COLS.map((c) => (
           <div key={c.title}>
             <div style={{ fontSize: 13, fontWeight: 700, marginBottom: 10 }}>{c.title}</div>

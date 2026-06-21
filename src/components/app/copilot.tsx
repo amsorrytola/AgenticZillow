@@ -230,7 +230,7 @@ function CopilotDock(p: DockProps) {
     <div
       aria-hidden={!p.open}
       style={{
-        position: "fixed", top: 0, right: 0, height: "100vh", width: 400, maxWidth: "100vw", zIndex: 1100,
+        position: "fixed", top: 0, right: 0, height: "100vh", width: "min(400px, 100vw)", maxWidth: "100vw", zIndex: 1100,
         background: "#fff", boxShadow: "var(--shadow-lg)", borderLeft: "1px solid var(--border-hairline)",
         transform: p.open ? "translateX(0)" : "translateX(110%)",
         transition: "transform .26s cubic-bezier(.4,0,.2,1)",

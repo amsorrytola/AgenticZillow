@@ -46,10 +46,10 @@ export default function HomeLoansPage() {
         </div>
       </section>
 
-      <div style={{ maxWidth: 1280, margin: "0 auto", padding: "32px 24px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 32, alignItems: "start" }}>
+      <div className="az-two" style={{ maxWidth: 1280, margin: "0 auto", padding: "32px 24px" }}>
         <div style={{ border: "1px solid var(--border-hairline)", borderRadius: 12, padding: 24 }}>
           <h2 style={{ fontSize: 20, fontWeight: 700, margin: "0 0 16px" }}>Affordability calculator</h2>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
+          <div className="az-grid-2">
             <NumberField label="Annual income" value={income} onChange={setIncome} />
             <NumberField label="Monthly debts" value={debts} onChange={setDebts} />
             <NumberField label="Down payment" value={down} onChange={setDown} />

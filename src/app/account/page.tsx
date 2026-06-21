@@ -33,7 +33,7 @@ export default function AccountPage() {
         <h1 style={{ fontSize: 32, fontWeight: 700, margin: "0 0 4px" }}>Your account</h1>
         <p style={{ color: "var(--text-secondary)", marginTop: 4 }}>Guest-first — no signup needed. Pick a persona to see tailored agent behavior.</p>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16, margin: "24px 0" }}>
+        <div className="az-grid-4" style={{ margin: "24px 0" }}>
           {PERSONAS.map((p) => (
             <button key={p.id} onClick={() => choose(p.id)} style={{ textAlign: "left", border: `2px solid ${active === p.id ? "var(--blue-600)" : "var(--border-hairline)"}`, borderRadius: 12, padding: 18, background: active === p.id ? "var(--blue-50)" : "#fff", cursor: "pointer" }}>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>

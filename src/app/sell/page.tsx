@@ -33,7 +33,7 @@ export default function SellPage() {
 
       <div style={{ maxWidth: 1280, margin: "0 auto", padding: "48px 24px" }}>
         <h2 style={{ fontSize: 28, fontWeight: 700, margin: "0 0 24px" }}>How selling works</h2>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 20 }}>
+        <div className="az-grid-4">
           {STEPS.map((s) => (
             <div key={s.n} style={{ border: "1px solid var(--border-hairline)", borderRadius: 12, padding: 20 }}>
               <div style={{ width: 36, height: 36, borderRadius: "50%", background: "var(--blue-600)", color: "#fff", display: "inline-flex", alignItems: "center", justifyContent: "center", fontWeight: 700, marginBottom: 12 }}>{s.n}</div>

@@ -27,7 +27,7 @@ export default async function HomePage() {
         <img src={HERO_PHOTO} alt="" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }} />
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.15) 40%, rgba(0,0,0,0.35) 100%)" }} />
         <div style={{ position: "relative", textAlign: "center", maxWidth: 760, padding: "0 24px" }}>
-          <h1 style={{ color: "#fff", fontSize: 46, lineHeight: "52px", fontWeight: 700, margin: 0, letterSpacing: "-0.02em", textShadow: "0 2px 16px rgba(0,0,0,0.3)" }}>Agents. Tours. Loans. Homes.</h1>
+          <h1 className="az-hero-h1" style={{ color: "#fff", fontSize: 46, lineHeight: "52px", fontWeight: 700, margin: 0, letterSpacing: "-0.02em", textShadow: "0 2px 16px rgba(0,0,0,0.3)" }}>Agents. Tours. Loans. Homes.</h1>
           <p style={{ color: "#fff", fontSize: 17, margin: "12px 0 28px", opacity: 0.95 }}>Find it. Tour it. Own it — with a little help.</p>
           <HeroSearch />
         </div>
@@ -37,7 +37,7 @@ export default async function HomePage() {
 
       {/* Buy/Rent/Sell tiles */}
       <section style={{ maxWidth: 1280, margin: "0 auto", padding: "24px 24px 8px" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
+        <div className="az-grid-3">
           {TILES.map((t) => (
             <Link key={t.title} href={t.href} style={{ textDecoration: "none", background: "#fff", border: "1px solid var(--border-hairline)", borderRadius: 12, padding: 28, textAlign: "center", boxShadow: "var(--shadow-sm)", display: "flex", flexDirection: "column", alignItems: "center", gap: 12 }}>
               <div style={{ width: 96, height: 96, borderRadius: "50%", background: "var(--blue-50)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 44 }}>{t.img}</div>
@@ -55,14 +55,14 @@ export default async function HomePage() {
           <h2 style={{ margin: 0, fontSize: 24, fontWeight: 700 }}>Homes for you</h2>
           <Link href="/search" style={{ fontSize: 14, fontWeight: 600, color: "var(--blue-600)" }}>See all →</Link>
         </div>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 20 }}>
+        <div className="az-grid-4">
           {listings.map((l) => <ListingCard key={l.id} l={l} />)}
         </div>
       </section>
 
       {/* Home value feature band */}
       <section style={{ background: "var(--blue-50)" }}>
-        <div style={{ maxWidth: 1280, margin: "0 auto", padding: "56px 24px", display: "grid", gridTemplateColumns: "1.1fr 1fr", gap: 48, alignItems: "center" }}>
+        <div className="az-two-eq" style={{ maxWidth: 1280, margin: "0 auto", padding: "56px 24px" }}>
           <div>
             <h2 style={{ margin: "0 0 12px", fontSize: 28, fontWeight: 700 }}>How much is your home worth?</h2>
             <p style={{ margin: "0 0 20px", fontSize: 16, color: "var(--text-secondary)", lineHeight: "24px" }}>Get an instant AI-powered estimate, then let the Market agent walk you through the comps behind it.</p>

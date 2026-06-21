@@ -10,6 +10,7 @@ import { PropertyMap } from "./PropertyMap";
 import { CopilotContext } from "./CopilotContext";
 import { useCopilot } from "./copilot";
 import { useSaved } from "./saved-store";
+import { useMedia } from "./use-media";
 import { parseQuery } from "@/lib/agents/nlu";
 import { METRO_BY_ID, DEFAULT_METRO } from "@/lib/data/metros";
 import { fmtPriceShort } from "@/lib/format";
@@ -31,6 +32,8 @@ export function SearchClient() {
   const sp = useSearchParams();
   const { setOpen, ask } = useCopilot();
   const { ids: savedIds } = useSaved();
+  const isMobile = useMedia("(max-width: 860px)");
+  const [mobileView, setMobileView] = useState<"list" | "map">("list");
 
   const [filters, setFilters] = useState<SearchFilters>({ transaction: "buy" });
   const [result, setResult] = useState<SearchResult | null>(null);
@@ -153,12 +156,15 @@ export function SearchClient() {
       </div>
 
       {/* split */}
-      <div style={{ flex: 1, display: "grid", gridTemplateColumns: "58% 42%", minHeight: 0 }}>
-        <div style={{ position: "relative", height: "100%" }}>
-          <PropertyMap listings={listings} center={center} zoom={metro.zoom} activeId={activeId} savedIds={savedIds} onActivate={setActiveId} />
-        </div>
+      <div style={{ flex: 1, display: "grid", gridTemplateColumns: isMobile ? "1fr" : "58% 42%", minHeight: 0 }}>
+        {(!isMobile || mobileView === "map") && (
+          <div style={{ position: "relative", height: "100%" }}>
+            <PropertyMap listings={listings} center={center} zoom={metro.zoom} activeId={activeId} savedIds={savedIds} onActivate={setActiveId} />
+          </div>
+        )}
 
-        <div style={{ overflowY: "auto", borderLeft: "1px solid var(--border-hairline)", padding: 24 }}>
+        {(!isMobile || mobileView === "list") && (
+        <div style={{ overflowY: "auto", borderLeft: isMobile ? "none" : "1px solid var(--border-hairline)", padding: isMobile ? 16 : 24 }}>
           <h1 style={{ margin: "0 0 4px", fontSize: 22, fontWeight: 700 }}>{headerTitle}</h1>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 14 }}>
             <span style={{ fontSize: 13, color: "var(--text-secondary)", fontVariantNumeric: "tabular-nums" }}>
@@ -184,7 +190,7 @@ export function SearchClient() {
             </div>
           )}
 
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
+          <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: 16 }}>
             {listings.map((l) => (
               <div key={l.id} onMouseEnter={() => setActiveId(l.id)} onMouseLeave={() => setActiveId(null)} style={{ borderRadius: 8, outline: activeId === l.id ? "2px solid var(--blue-600)" : "none", outlineOffset: 2 }}>
                 <ListingCard l={l} />
@@ -192,7 +198,17 @@ export function SearchClient() {
             ))}
           </div>
         </div>
+        )}
       </div>
+
+      {isMobile && (
+        <button
+          onClick={() => setMobileView((v) => (v === "list" ? "map" : "list"))}
+          style={{ position: "fixed", bottom: 24, left: "50%", transform: "translateX(-50%)", zIndex: 1080, height: 44, padding: "0 22px", borderRadius: 9999, border: "none", background: "var(--gray-900)", color: "#fff", fontWeight: 600, fontSize: 14, boxShadow: "var(--shadow-lg)", display: "inline-flex", alignItems: "center", gap: 8, cursor: "pointer" }}
+        >
+          {mobileView === "list" ? "🗺️ Map" : "☰ List"}
+        </button>
+      )}
     </div>
   );
 }
